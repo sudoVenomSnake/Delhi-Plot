@@ -19,4 +19,4 @@ with col1:
 with col2:
     choice = st.selectbox('Select your area - ', options = temp['District'].unique())
     df = pd.read_csv('Delhi_Lawyers_Area.csv')
-    st.write(df[df['District'] == choice][['Name', 'YOE', 'Registration Number', 'Mobile No.', 'Address', 'Pincode', 'Age']].sort_values('YOE', ascending = False).reset_index().drop('index', axis = 1))
+    st.write(df[df['District'] == choice][['Name', 'YOE', 'Registration Number', 'Mobile No.', 'Address', 'Pincode', 'Age']].sort_values('YOE', ascending = False).reset_index().drop('index', axis = 1).drop_duplicates())
